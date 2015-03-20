@@ -3,6 +3,26 @@
     <title></title>
   </head>
   <body>
+    <% if number > guess %>
+      <style>
+        body {
+            background: crimson;
+          }
+      </style>
+      <% elsif number < guess %>
+      <style>
+      body {
+          background: blue;
+        }
+      </style>
+      <% else number == guess %>
+      <style>
+      body {
+          background: green;
+        }
+      </style>
+    <% end %>
+
     <form>
       <input type='text' name='guess' />
       <input type='submit' value='Guess!' />
