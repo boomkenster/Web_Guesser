@@ -6,13 +6,13 @@
     <% if number > guess %>
       <style>
         body {
-            background: crimson;
+            background: blue;
           }
       </style>
       <% elsif number < guess %>
       <style>
       body {
-          background: blue;
+          background: crimson;
         }
       </style>
       <% else number == guess %>
@@ -23,12 +23,19 @@
       </style>
     <% end %>
 
+    <p>
+      <% if cheat == "true" %>
+      The SECRET NUMBER is <%= number %>
+      <% end %>
+    </p>
+
     <form>
       <input type='text' name='guess' />
+      <input type='hidden' name='cheat' />
       <input type='submit' value='Guess!' />
     </form>
     <p>
-      The SECRET NUMBER is <%= number %>
+
       <%= message %>
     </p>
   </body>
